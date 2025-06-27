@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بايثون للمبتدئين في ساعة | مُبرْمِج</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .lesson-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+        }
+        h1, h2, h3 {
+            color: #0d3b66;
+        }
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            direction: ltr;
+            text-align: left;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+        }
+        code { color: #e6db74; }
+        .btn {
+            display: inline-block;
+            background: #1a73e8;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s;
+            border: 2px solid #1a73e8;
+        }
+        .btn:hover {
+            background: transparent;
+            color: #1a73e8;
+            transform: scale(1.05);
+        }
+        .note {
+            background: #e3f2fd;
+            border-right: 4px solid #1a73e8;
+            padding: 15px;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exercise {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 1.5rem 0;
+            border-radius: 8px 0 0 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lesson-content">
+            <h1>بايثون للمبتدئين - تعلّم الأساسيات في ساعة واحدة</h1>
+            
+            <div class="note">
+                <strong>ملاحظة:</strong> هذا الدرس موجّه للأشخاص الذين لا يملكون أي خلفية برمجية. سنبدأ من الصفر!
+            </div>
+            
+            <h2>🎯 ما ستتعلمه:</h2>
+            <ul>
+                <li>تركيب بايثون على جهازك</li>
+                <li>كتابة أول برنامج لك (Hello World!)</li>
+                <li>المتغيرات وأنواع البيانات</li>
+                <li>الجمل الشرطية (if-else)</li>
+                <li>الحلقات التكرارية (loops)</li>
+                <li>الدوال (functions)</li>
+            </ul>
+            
+            <h2>⚙️ تركيب بايثون:</h2>
+            <p>1. اذهب إلى <a href="https://python.org/downloads" target="_blank">الموقع الرسمي</a></p>
+            <p>2. حمّل الإصدار الأخير (Python 3.12+)</p>
+            <p>3. شغّل الملف واتبع الخطوات (تأكد من اختيار "Add Python to PATH")</p>
+            
+            <h2>✍️ أول برنامج:</h2>
+            <pre><code># اطبع جملة "مرحباً بالعالم!"
+print("مرحباً بالعالم!")</code></pre>
+            
+            <h2>📦 المتغيرات:</h2>
+            <pre><code># تعريف متغيرات
+اسم = "أحمد"
+عمر = 25
+طالب = True
+
+# طباعة متغيرات
+print("الاسم:", اسم)
+print("العمر:", عمر)
+print("هل هو طالب؟", طالب)</code></pre>
+            
+            <h2>🔢 أنواع البيانات:</h2>
+            <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
+                <tr style="background: #0d3b66; color: white;">
+                    <th style="padding: 10px; border: 1px solid #ddd;">النوع</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">الوصف</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">مثال</th>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">str</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">نص</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">"مرحباً"</td>
+                </tr>
+                <tr style="background: #f9f9f9;">
+                    <td style="padding: 10px; border: 1px solid #ddd;">int</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">رقم صحيح</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">42</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">float</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">رقم عشري</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">3.14</td>
+                </tr>
+                <tr style="background: #f9f9f9;">
+                    <td style="padding: 10px; border: 1px solid #ddd;">bool</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">قيمة منطقية</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">True, False</td>
+                </tr>
+            </table>
+            
+            <h2>🔀 الجمل الشرطية:</h2>
+            <pre><code># مثال if-elif-else
+درجة_الحرارة = 30
+
+if درجة_الحرارة > 35:
+    print("الجو حار جداً!")
+elif درجة_الحرارة > 25:
+    print("الجو معتدل")
+else:
+    print("الجو بارد")</code></pre>
+            
+            <div class="exercise">
+                <strong>تمرين:</strong> أنشئ برنامج يتحقق إذا كان العمر أكبر من 18 ويطبع "بالغ" أو "قاصر"
+            </div>
+            
+            <h2>🔄 الحلقات التكرارية:</h2>
+            <h3>حلقة for:</h3>
+            <pre><code># طباعة الأرقام من 1 إلى 5
+for رقم in range(1, 6):
+    print(رقم)
+    
+# طباعة عناصر قائمة
+أسماء = ["أحمد", "محمد", "فاطمة"]
+for اسم in أسماء:
+    print("مرحباً", اسم)</code></pre>
+            
+            <h3>حلقة while:</h3>
+            <pre><code># عد تنازلي من 5 إلى 1
+عداد = 5
+while عداد > 0:
+    print(عداد)
+    عداد -= 1  # اختصار لـ عداد = عداد - 1
+print("انطلق!")</code></pre>
+            
+            <h2>📝 الدوال:</h2>
+            <pre><code># تعريف دالة
+def جمع(أ, ب):
+    """هذه الدالة تجمع عددين"""
+    نتيجة = أ + ب
+    return نتيجة
+
+# استدعاء الدالة
+مجموع = جمع(5, 3)
+print("ناتج الجمع:", مجموع)  # سيطبع 8</code></pre>
+            
+            <div class="exercise">
+                <strong>تمرين متقدم:</strong> أنشئ دالة تتحقق إذا كان الرقم زوجياً وتُرجع True أو False
+            </div>
+            
+            <h2>🎓 المشروع الختامي:</h2>
+            <p>برنامج آلة حاسبة بسيطة تقبل أمرين من المستخدم وتنفذ عملية الجمع أو الطلب أو الضرب أو القسمة.</p>
+            <pre><code># آلة حاسبة بسيطة
+print("مرحباً في الآلة الحاسبة البسيطة!")
+
+العدد1 = float(input("أدخل العدد الأول: "))
+العدد2 = float(input("أدخل العدد الثاني: "))
+
+print("\nاختر العملية:")
+print("1 - جمع (+)")
+print("2 - طرح (-)")
+print("3 - ضرب (*)")
+print("4 - قسمة (/)")
+
+اختيار = input("أدخل رقم العملية (1/2/3/4): ")
+
+if اختيار == '1':
+    print(العدد1, "+", العدد2, "=", العدد1 + العدد2)
+elif اختيار == '2':
+    print(العدد1, "-", العدد2, "=", العدد1 - العدد2)
+elif اختيار == '3':
+    print(العدد1, "*", العدد2, "=", العدد1 * العدد2)
+elif اختيار == '4':
+    if العدد2 != 0:
+        print(العدد1, "/", العدد2, "=", العدد1 / العدد2)
+    else:
+        print("لا يمكن القسمة على صفر!")
+else:
+    print("اختيار غير صحيح!")</code></pre>
+            
+            <a href="../projects/calculator-app.zip" class="btn">تحميل مشروع الآلة الحاسبة</a>
+        </div>
+    </div>
+</body>
+  </html>
