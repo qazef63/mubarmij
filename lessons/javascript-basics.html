@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أساسيات JavaScript | مُبرْمِج</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .lesson-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+        }
+        h1, h2, h3 {
+            color: #0d3b66;
+        }
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            direction: ltr;
+            text-align: left;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+        }
+        code { color: #e6db74; }
+        .btn {
+            display: inline-block;
+            background: #1a73e8;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s;
+            border: 2px solid #1a73e8;
+        }
+        .btn:hover {
+            background: transparent;
+            color: #1a73e8;
+            transform: scale(1.05);
+        }
+        .note {
+            background: #e3f2fd;
+            border-right: 4px solid #1a73e8;
+            padding: 15px;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exercise {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 1.5rem 0;
+            border-radius: 8px 0 0 8px;
+        }
+        .interactive {
+            background: #fff8e1;
+            border: 2px dashed #ffc107;
+            padding: 20px;
+            margin: 1.5rem 0;
+            border-radius: 10px;
+            text-align: center;
+        }
+        #counterValue {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #1a73e8;
+            margin: 15px 0;
+        }
+        .counter-btn {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            background: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .counter-btn:hover {
+            background: #0d3b66;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lesson-content">
+            <h1>أساسيات JavaScript - تحويل المواقع إلى تطبيقات تفاعلية</h1>
+            
+            <div class="note">
+                <strong>ملاحظة:</strong> يجب أن تكون لديك معرفة أساسية بـ HTML و CSS قبل هذا الدرس.
+            </div>
+            
+            <h2>🎯 ما ستتعلمه:</h2>
+            <ul>
+                <li>ربط JavaScript مع HTML</li>
+                <li>أساسيات الصياغة (Syntax) والمتغيرات</li>
+                <li>التعامل مع DOM (نموذج كائن المستند)</li>
+                <li>الاستجابة للأحداث (Events)</li>
+                <li>إنشاء تطبيقات تفاعلية بسيطة</li>
+            </ul>
+            
+            <h2>🔗 ربط JavaScript مع HTML:</h2>
+            <p>هناك طريقتان رئيسيتان:</p>
+            
+            <h3>1. الطريقة المباشرة (في نفس الملف):</h3>
+            <pre><code>&lt;script&gt;
+  // أكواد JavaScript هنا
+  console.log("مرحباً من JavaScript!");
+&lt;/script&gt;</code></pre>
+            
+            <h3>2. الطريقة الخارجية (ملف منفصل):</h3>
+            <pre><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+            
+            <h2>📦 المتغيرات وأنواع البيانات:</h2>
+            <pre><code>// تعريف المتغيرات
+let اسم = "أحمد";         // نص
+const عمر = 25;          // ثابت (رقم صحيح)
+var طالب = true;         // قيمة منطقية
+
+// كائن
+let المستخدم = {
+  الاسم: "محمد",
+  الإيميل: "mohamed@example.com"
+};
+
+// مصفوفة
+let ألوان = ["أحمر", "أخضر", "أزرق"];</code></pre>
+            
+            <div class="note">
+                <strong>نصيحة:</strong> استخدم <code>const</code> للمتغيرات التي لا تتغير، و<code>let</code> للمتغيرات المتغيرة. تجنب <code>var</code> في الأكواد الحديثة.
+            </div>
+            
+            <h2>🌳 التعامل مع DOM:</h2>
+            <p>DOM (نموذج كائن المستند) هو تمثيل HTML في شكل كائنات يمكن لـ JavaScript التعامل معها.</p>
+            
+            <h3>طرق الوصول للعناصر:</h3>
+            <pre><code>// عنصر واحد
+const عنوان = document.getElementById("العنوان");
+
+// مجموعة عناصر
+const روابط = document.querySelectorAll(".رابط");
+
+// إنشاء عنصر جديد
+const عنصرجديد = document.createElement("div");</code></pre>
+            
+            <h3>تعديل المحتوى:</h3>
+            <pre><code>// تغيير النص
+عنوان.textContent = "مرحباً بالعالم الجديد!";
+
+// تغيير HTML
+عنوان.innerHTML = "&lt;strong&gt;نص عريض&lt;/strong&gt;";
+
+// تغيير الأنماط
+عنوان.style.color = "blue";
+عنوان.style.fontSize = "24px";</code></pre>
+            
+            <div class="exercise">
+                <strong>تمرين:</strong> أنشئ زراً عند الضغط عليه يغير لون خلفية الصفحة.
+            </div>
+            
+            <h2>🎭 الأحداث (Events):</h2>
+            <p>تسمح لك بالاستجابة لأفعال المستخدم:</p>
+            
+            <h3>الطريقة التقليدية:</h3>
+            <pre><code>&lt;button onclick="handleClick()"&gt;انقر هنا&lt;/button&gt;
+
+&lt;script&gt;
+function handleClick() {
+  alert("تم النقر على الزر!");
+}
+&lt;/script&gt;</code></pre>
+            
+            <h3>الطريقة الحديثة (Event Listeners):</h3>
+            <pre><code>const button = document.querySelector("button");
+
+button.addEventListener("click", function() {
+  console.log("تم النقر باستخدام الـ Event Listener");
+});</code></pre>
+            
+            <h2>🔄 مشروع: عداد تفاعلي</h2>
+            <div class="interactive">
+                <h3>العداد التفاعلي</h3>
+                <div id="counterValue">0</div>
+                <button class="counter-btn" id="decrementBtn">-</button>
+                <button class="counter-btn" id="resetBtn">تصفير</button>
+                <button class="counter-btn" id="incrementBtn">+</button>
+            </div>
+            
+            <script>
+                // كود العداد التفاعلي
+                let count = 0;
+                const counterValue = document.getElementById('counterValue');
+                const incrementBtn = document.getElementById('incrementBtn');
+                const decrementBtn = document.getElementById('decrementBtn');
+                const resetBtn = document.getElementById('resetBtn');
+                
+                function updateCounter() {
+                    counterValue.textContent = count;
+                    counterValue.style.color = count > 0 ? '#1a73e8' : count < 0 ? '#f44336' : '#333';
+                }
+                
+                incrementBtn.addEventListener('click', () => {
+                    count++;
+                    updateCounter();
+                });
+                
+                decrementBtn.addEventListener('click', () => {
+                    count--;
+                    updateCounter();
+                });
+                
+                resetBtn.addEventListener('click', () => {
+                    count = 0;
+                    updateCounter();
+                });
+            </script>
+            
+            <h3>كود المشروع:</h3>
+            <pre><code>&lt;div class="interactive"&gt;
+  &lt;h3&gt;العداد التفاعلي&lt;/h3&gt;
+  &lt;div id="counterValue"&gt;0&lt;/div&gt;
+  &lt;button id="decrementBtn"&gt;-&lt;/button&gt;
+  &lt;button id="resetBtn"&gt;تصفير&lt;/button&gt;
+  &lt;button id="incrementBtn"&gt;+&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  let count = 0;
+  const counterValue = document.getElementById('counterValue');
+  const incrementBtn = document.getElementById('incrementBtn');
+  const decrementBtn = document.getElementById('decrementBtn');
+  const resetBtn = document.getElementById('resetBtn');
+  
+  function updateCounter() {
+    counterValue.textContent = count;
+    counterValue.style.color = count > 0 ? 'blue' : count < 0 ? 'red' : 'black';
+  }
+  
+  incrementBtn.addEventListener('click', () => {
+    count++;
+    updateCounter();
+  });
+  
+  decrementBtn.addEventListener('click', () => {
+    count--;
+    updateCounter();
+  });
+  
+  resetBtn.addEventListener('click', () => {
+    count = 0;
+    updateCounter();
+  });
+&lt;/script&gt;</code></pre>
+            
+            <a href="../projects/calculator-app.zip" class="btn">تحميل مشروع آلة حاسبة متقدمة</a>
+            
+            <h2>💡 نصائح للاستمرار:</h2>
+            <ul>
+                <li>تدرب يومياً على مشاريع صغيرة</li>
+                <li>استخدم أدوات التصحيح في المتصفح (F12)</li>
+                <li>تعلم مكتبات مثل jQuery ثم إطارات العمل مثل React أو Vue</li>
+                <li>شارك في مجتمعات المطورين العربية</li>
+            </ul>
+        </div>
+    </div>
+</body>
+  </html>
